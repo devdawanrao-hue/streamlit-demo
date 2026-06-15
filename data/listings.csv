@@ -1,0 +1,16 @@
+id,title,description,category,price,condition,seller,contact,image,status,created_at
+1,Calculus Textbook,Single-volume calculus textbook, edition 3,Textbooks,250,Good,Alice,WhatsApp: +91 98765 43210,,active,2024-08-01T10:00:00
+2,Organic Chemistry Lab Manual,Lab manual with handwritten notes,Textbooks,150,Good,Bob,Campus notice board A5,,active,2024-08-03T12:00:00
+3,Physics Textbook,Introductory physics with problem sets,Textbooks,300,Like New,Clara,WhatsApp: +91 87654 32109,,active,2024-08-05T09:00:00
+4,Discrete Math Notes,Comprehensive notes and solutions,Study Materials,50,Good,Daniel,Department office, room 12A,,active,2024-08-07T11:00:00
+5,Lab Coat (M),White lab coat size M,Lab Coats,100,Good,Emma,Campus store pickup,,active,2024-08-09T14:00:00
+6,Scientific Calculator,TI-84 in working condition,Scientific Calculators,500,Used,Frank,WhatsApp: +91 99887 66554,,active,2024-08-10T15:30:00
+7,Statistics Textbook,Probability and Statistics with examples,Textbooks,200,Good,Grace,Campus chat group,,active,2024-08-11T08:20:00
+8,Biology Flashcards,Set of 300 cards for semester review,Study Materials,80,Like New,Henry,WhatsApp: +91 90123 45678,,active,2024-08-12T09:40:00
+9,Digital Multimeter,Essential lab tool,Academic Tools,180,Good,Ivy,Lab coordinator,,active,2024-08-13T10:10:00
+10,Organic Chemistry Kit,Glassware and basics,Academic Tools,600,Fair,Jack,Labs office,,active,2024-08-14T13:00:00
+11,Lab Coat (S),White lab coat size S,Lab Coats,120,Like New,Kate,Campus store pickup,,active,2024-08-15T09:00:00
+12,Programming Notes,Python exercises and solutions,Study Materials,70,Good,Liam,WhatsApp: +91 98012 34567,,active,2024-08-16T16:00:00
+13,Engineering Calculator,HP scientific calc,Scientific Calculators,450,Good,Maya,Campus messaging,,active,2024-08-17T18:00:00
+14,Chemistry Textbook,Chemistry fundamentals with lab guides,Textbooks,280,Good,Nate,WhatsApp: +91 94455 66778,,active,2024-08-18T20:00:00
+15,Graphing Paper Pack,Bundle of 5 pads,Study Materials,40,New,Olivia,College cafe,,active,2024-08-19T21:00:00
