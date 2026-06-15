@@ -3,6 +3,9 @@ from datetime import datetime
 import os
 from data_manager import load_listings
 
+# Configure the top-level page (this file acts as the Home page)
+st.set_page_config(page_title='Campus Marketplace', page_icon='🏫', layout='wide')
+
 # Load custom CSS from the assets folder if available
 def local_css(file_name):
     if os.path.exists(file_name):
@@ -10,9 +13,6 @@ def local_css(file_name):
             st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 local_css('assets/styles.css')
-
-# Configure the top-level page (this file acts as the Home page)
-st.set_page_config(page_title='Campus Marketplace', page_icon='🏫', layout='wide')
 
 def hero():
         # Premium SaaS-style hero (dark gradient, badge, CTA, hero graphic)
