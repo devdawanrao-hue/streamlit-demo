@@ -5,6 +5,15 @@ import os
 # Browse page lists all active items and provides search/filters
 st.set_page_config(page_title='Browse Listings')
 
+# Stock image URLs by category for placeholder images
+CATEGORY_IMAGES = {
+    'Textbooks': 'https://images.unsplash.com/photo-1507842217343-583f20270319?w=400&q=80',
+    'Study Materials': 'https://images.unsplash.com/photo-1456953281174-e6629ffb4b30?w=400&q=80',
+    'Lab Coats': 'https://images.unsplash.com/photo-1576091160550-112173f7f869?w=400&q=80',
+    'Scientific Calculators': 'https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=400&q=80',
+    'Academic Tools': 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80',
+}
+
 def render_card(l):
     # Render a single listing card (image + details)
     st.markdown('<div class="listing-card">', unsafe_allow_html=True)
@@ -13,7 +22,10 @@ def render_card(l):
         if l.get('image') and os.path.exists(l.get('image')):
             st.image(l.get('image'), use_column_width=True)
         else:
-            st.markdown('<div style="font-size: 3rem;">📦</div>', unsafe_allow_html=True)
+            # Use stock image based on category
+            category = l.get('category', 'Academic Tools')
+            stock_img = CATEGORY_IMAGES.get(category, CATEGORY_IMAGES['Academic Tools'])
+            st.image(stock_img, use_column_width=True)
     with cols[1]:
         st.subheader(l.get('title'))
         st.markdown(f"<div class='listing-meta'>**{l.get('category')}** • {l.get('condition')} • ₹{l.get('price')}</div>", unsafe_allow_html=True)

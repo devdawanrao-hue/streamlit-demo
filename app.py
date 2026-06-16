@@ -14,11 +14,20 @@ def local_css(file_name):
 
 local_css('assets/styles.css')
 
+# Stock image URLs (Unsplash & free sources)
+STOCK_IMAGES = {
+    'hero': 'https://images.unsplash.com/photo-1523875335684-37898b6baf30?w=1200&q=80',  # Campus scene
+    'books': 'https://images.unsplash.com/photo-1507842217343-583f20270319?w=400&q=80',  # Stack of books
+    'save': 'https://images.unsplash.com/photo-1573497491363-e6169e7f214b?w=400&q=80',  # Piggy bank / savings
+    'reuse': 'https://images.unsplash.com/photo-1559015615-cd4628902d4a?w=400&q=80',  # Recycling / sustainability
+    'community': 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=80',  # People / teamwork
+}
+
 def hero():
-        # Premium SaaS-style hero (dark gradient, badge, CTA, hero graphic)
+        # Premium SaaS-style hero (dark gradient, badge, CTA, hero graphic + image)
         st.markdown(
-                """
-                <div class='hero'>
+                f"""
+                <div class='hero' style='background-image:url({STOCK_IMAGES["hero"]}); background-size:cover; background-position:center; background-blend-mode:overlay;'>
                     <div class='hero-left'>
                         <div class='hero-badge'><span style='font-size:16px;'>🎓</span><span>Campus Marketplace</span></div>
                         <h1>Campus Marketplace</h1>
@@ -33,27 +42,8 @@ def hero():
                     </div>
                     <div class='hero-right'>
                         <div class='hero-graphic'>
-                            <!-- simple price-tag SVG with sparkles -->
-                            <svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg' class='sparkle'>
-                                <defs>
-                                    <linearGradient id='g1' x1='0' x2='1'>
-                                        <stop offset='0%' stop-color='#6EE7B7'/>
-                                        <stop offset='100%' stop-color='#60A5FA'/>
-                                    </linearGradient>
-                                </defs>
-                                <g fill='none' fill-rule='evenodd'>
-                                    <path d='M34 66 L100 22 L166 66 L100 166 Z' fill='url(#g1)' opacity='0.95' stroke='rgba(255,255,255,0.12)' stroke-width='2' />
-                                    <circle cx='100' cy='70' r='10' fill='#fff' />
-                                    <path d='M100 80 L120 110' stroke='rgba(255,255,255,0.6)' stroke-width='2' stroke-linecap='round' />
-                                    <!-- sparkles -->
-                                    <g fill='#fff' opacity='0.9'>
-                                        <circle cx='160' cy='30' r='2.8'/>
-                                        <circle cx='180' cy='60' r='1.8'/>
-                                        <circle cx='140' cy='50' r='1.8'/>
-                                        <rect x='30' y='20' width='3' height='8' rx='1' transform='rotate(25 31.5 24)' />
-                                    </g>
-                                </g>
-                            </svg>
+                            <!-- stock image on the right -->
+                            <img src='{STOCK_IMAGES["books"]}' style='border-radius:20px; box-shadow:0 15px 50px rgba(0,0,0,0.3); width:100%; height:auto;' alt='Books' />
                         </div>
                     </div>
                 </div>
@@ -84,25 +74,28 @@ def featured(listings):
             st.write(l.get('description')[:120] + '...')
 
 def benefits():
-    # Short benefits list
+    # Short benefits list with stock images
     st.header('Why Campus Marketplace')
     st.markdown(
-        """
+        f"""
         <div class='benefit-grid'>
-            <div class='benefit-card'>
-                <div class='feature-top'><div class='feature-icon' style='background:linear-gradient(135deg,#06b6d4,#3b82f6)'>
+            <div class='benefit-card' style='background-image:url({STOCK_IMAGES["save"]}); background-size:cover; background-position:center; position:relative;'>
+                <div style='position:absolute; inset:0; background:linear-gradient(135deg,rgba(6,182,212,0.85),rgba(59,130,246,0.85)); border-radius:20px;'></div>
+                <div class='feature-top' style='position:relative; z-index:2;'><div class='feature-icon' style='background:linear-gradient(135deg,#06b6d4,#3b82f6);'>
                     <svg width='20' height='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M12 2L2 7l10 5 10-5-10-5z' fill='white'/><path d='M2 17l10 5 10-5' stroke='white' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/></svg>
-                </div><div><div class='feature-title'>Save money</div><div class='feature-desc'>Find affordable textbooks and lab essentials.</div></div></div>
+                </div><div><div class='feature-title' style='color:#fff;'>Save money</div><div class='feature-desc' style='color:#fff;'>Find affordable textbooks and lab essentials.</div></div></div>
             </div>
-            <div class='benefit-card'>
-                <div class='feature-top'><div class='feature-icon' style='background:linear-gradient(135deg,#f97316,#f59e0b)'>
+            <div class='benefit-card' style='background-image:url({STOCK_IMAGES["reuse"]}); background-size:cover; background-position:center; position:relative;'>
+                <div style='position:absolute; inset:0; background:linear-gradient(135deg,rgba(249,115,22,0.85),rgba(245,158,11,0.85)); border-radius:20px;'></div>
+                <div class='feature-top' style='position:relative; z-index:2;'><div class='feature-icon' style='background:linear-gradient(135deg,#f97316,#f59e0b);'>
                     <svg width='20' height='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M12 2L2 7l10 5 10-5-10-5z' fill='white'/></svg>
-                </div><div><div class='feature-title'>Reuse resources</div><div class='feature-desc'>Extend item lifecycles and reduce campus waste.</div></div></div>
+                </div><div><div class='feature-title' style='color:#fff;'>Reuse resources</div><div class='feature-desc' style='color:#fff;'>Extend item lifecycles and reduce campus waste.</div></div></div>
             </div>
-            <div class='benefit-card'>
-                <div class='feature-top'><div class='feature-icon' style='background:linear-gradient(135deg,#8b5cf6,#6366f1)'>
+            <div class='benefit-card' style='background-image:url({STOCK_IMAGES["community"]}); background-size:cover; background-position:center; position:relative;'>
+                <div style='position:absolute; inset:0; background:linear-gradient(135deg,rgba(139,92,246,0.85),rgba(99,102,241,0.85)); border-radius:20px;'></div>
+                <div class='feature-top' style='position:relative; z-index:2;'><div class='feature-icon' style='background:linear-gradient(135deg,#8b5cf6,#6366f1);'>
                     <svg width='20' height='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M12 2L2 7l10 5 10-5-10-5z' fill='white'/></svg>
-                </div><div><div class='feature-title'>Build community</div><div class='feature-desc'>Connect with other students in your faculty.</div></div></div>
+                </div><div><div class='feature-title' style='color:#fff;'>Build community</div><div class='feature-desc' style='color:#fff;'>Connect with other students in your faculty.</div></div></div>
             </div>
         </div>
         """,
